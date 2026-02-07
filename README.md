@@ -7,6 +7,8 @@ A lightweight macOS daemon that watches your project directories for file change
 - **AI workflows** — grab the files you need from one place instead of hunting through Finder when feeding context to Claude, Cursor, etc.
 - **General productivity** — macOS has a built-in Recents view in Finder, the system file manager. It's a good idea, but it only tracks files opened through Finder itself. Anything touched by an editor, terminal, CLI tool, or AI agent is invisible to it. This watches the filesystem directly, so nothing gets missed.
 
+![RecentWork in Finder](screenshot.png)
+
 > **Requirements:** macOS 13+ · Swift 5.9
 
 ## Install
