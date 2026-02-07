@@ -6,12 +6,20 @@ Built for fast AI-assisted development workflows — grab the files you need fro
 
 > **Requirements:** macOS 13+ · Swift 5.9
 
-## Installation
+## Install
 
-```sh
-swift build -c release
-cp .build/release/recent-work /usr/local/bin/
-```
+**Homebrew:**
+
+    brew install jadnohra/tap/recent-work
+
+**Quick install:**
+
+    curl -fsSL https://raw.githubusercontent.com/jadnohra/recent-work/main/install.sh | sh
+
+**Build from source:**
+
+    swift build -c release
+    cp .build/release/recent-work /usr/local/bin/
 
 ## Quick Start
 
@@ -44,6 +52,10 @@ That's it. `~/RecentWork/` will start populating as you edit files.
 - **Ignores noise** — hidden files/directories, build artifacts (`.o`, `.tmp`, `.pyc`), lockfiles, binaries, archives, etc.
 
 Runs as a launchd service (`com.recentwork.daemon`). Starts on login, restarts on crash.
+
+## recent-work Pro
+
+Need configurable watch directories, file type filtering, and custom retention? See [recent-work-pro](https://github.com/jadnohra/recent-work-pro).
 
 ## License
 
