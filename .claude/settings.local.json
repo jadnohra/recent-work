@@ -1,9 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(git -C /Users/jad_irred/repos/jad/recent-work log --oneline -10)",
-      "Bash(find:*)",
-      "Bash(swift build:*)"
-    ]
-  }
-}
