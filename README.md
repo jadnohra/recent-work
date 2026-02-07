@@ -55,7 +55,8 @@ Runs as a launchd service (`com.recentwork.daemon`). Starts on login, restarts o
 
 ## recent-work Pro
 
-Need configurable watch directories, file type filtering, and custom retention? See [recent-work-pro](https://github.com/jadnohra/recent-work-pro).
+Custom watch rules, cross-platform support, and a native installer.
+Check out [recent-work Pro](https://recent-work.com).
 
 ## License
 
