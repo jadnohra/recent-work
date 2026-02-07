@@ -1,0 +1,32 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build universal binary
+        run: swift build -c release --arch arm64 --arch x86_64
+
+      - name: Package
+        run: |
+          cd .build/apple/Products/Release
+          tar czf recent-work-macos-universal.tar.gz recent-work
+          shasum -a 256 recent-work-macos-universal.tar.gz > recent-work-macos-universal.tar.gz.sha256
+
+      - name: Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          SHA256=$(cat .build/apple/Products/Release/recent-work-macos-universal.tar.gz.sha256 | awk '{print $1}')
+          gh release create "${{ github.ref_name }}" \
+            .build/apple/Products/Release/recent-work-macos-universal.tar.gz \
+            .build/apple/Products/Release/recent-work-macos-universal.tar.gz.sha256 \
+            --title "${{ github.ref_name }}" \
+            --notes "SHA256: \`${SHA256}\`"
